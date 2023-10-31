@@ -1,0 +1,47 @@
+
+
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+            System.out.println("SIGN UP");
+            System.out.print("Username: ");
+                String signupusername = scanner.nextLine();
+                
+            System.out.print("Password: ");
+                String signuppassword = scanner.nextLine();
+                
+           
+            String username = signupusername;
+            String password = signuppassword;
+            int limit = 3;
+            int attempts = 0;
+            
+            
+            while (attempts < limit) {
+            System.out.println("\nSIGN IN");
+            System.out.print("Username: ");
+                String signinusername = scanner.nextLine();
+            
+            System.out.print("Password: ");
+                String signinpassword = scanner.nextLine();
+
+            if (signinusername.equals(username) && signinpassword.equals(password)) 
+            {
+                System.out.println("\nSign-in confirmed.");
+                break;
+            } 
+            else 
+            {
+                System.out.println("\nUsername and password do not match.");
+                attempts++;
+            }
+
+            if (attempts < limit) {
+                System.out.println("You have " + (limit - attempts) + " attempt left" );
+            } else {
+                System.out.println("Limit attempts reached. Access denied.");
+            }
+        }
+    }
+}
